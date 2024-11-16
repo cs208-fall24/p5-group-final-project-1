@@ -1,3 +1,23 @@
 body{
-    background-color: orange;
+    background-color: lightblue;
+}
+
+hr{
+    height: 4px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+}
+
+h1{
+    text-align: center;
+    font-size: 250%;
+}
+
+h2{
+    font-size: 175%;
+}
+
+ul{
+    font-size: 125%;
 }

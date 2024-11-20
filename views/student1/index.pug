@@ -45,4 +45,12 @@ body
             li Contemplate if it is worth the extra 50 dollars to get the signed edition.
             li Look at your collection of unplayed records and realize how much money of value is sitting in one box.
             li Take an extensive amount more effort to put a record on a turntable, rather than just putting it on a speaker (You say you like how it sounds, but you really can&apos;t tell the difference).
-
+    section
+        h2 Comments
+        form(action = '/add', method = POST, id = 'input')
+            p
+                input#comment(type='text' name='comment' placeholder='Create a comment!')
+                br
+                br
+                input(type='submit' value='Post')
+        br

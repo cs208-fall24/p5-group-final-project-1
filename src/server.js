@@ -7,6 +7,10 @@ const sqlite3 = sql.verbose()
 // Create an in memory table to use
 const db = new sqlite3.Database(':memory:')
 
+db.run(`CREATE TABLE comments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    comment TEXT NOT NULL)`)
+
 const app = express()
 app.use(express.static('public'))
 app.set('views', 'views')
@@ -19,8 +23,21 @@ app.get('/', function (req, res) {
 })
 
 app.get('/student1', function (req, res) {
+  const local = { comments: [] }
+  db.each('SELECT id, comment FROM comments', function (err, row) {
+    if (err) {
+      console.log(err)
+    } else {
+      local.comments.push({ id: row.id, comment: row.comment })
+    }
+  }, function (err, numrows) {
+    if (!err) {
+      res.render('student1', local)
+    } else {
+      console.log(err)
+    }
+  })
   console.log('GET called')
-  res.render('student1')
 })
 
 app.get('/student2', function (req, res) {
@@ -30,6 +47,14 @@ app.get('/student2', function (req, res) {
 
 student3Routes(app, db)
 
+
+app.post('/add', function(req, res) {
+  console.log('adding comment')
+  const stmt = db.prepare('INSERT INTO comments (comment) VALUES (?)')
+  stmt.run(rew.body.comment)
+  stmt.finalize()
+  res.redirect('/')
+})
 
 // Start the web server
 app.listen(3000, function () {

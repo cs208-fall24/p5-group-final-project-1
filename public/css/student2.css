@@ -1,5 +1,5 @@
 body{
-    background-color: lightblue;
+    background-color: lightyellow;
 }
 
 hr{
@@ -7,17 +7,4 @@ hr{
     border-width: 0;
     color: black;
     background-color: black;
-}
-
-h1{
-    text-align: center;
-    font-size: 250%;
-}
-
-h2{
-    font-size: 175%;
-}
-
-ul{
-    font-size: 125%;
 }

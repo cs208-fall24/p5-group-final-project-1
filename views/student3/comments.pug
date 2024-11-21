@@ -1,0 +1,31 @@
+doctype html
+link(rel='stylesheet' href='/css/student3.css')
+head
+  title Comments - Snake Training (PhD)
+body
+  h1 Comments for Snake Training (PhD)
+  h2 Add a New Comment
+  form(action='/student3/comments/add' method='post')
+    textarea(name='comment' rows='4' cols='50')
+    br
+    button(type='submit') Add Comment
+  h2 Existing Comments
+  if comments.length > 0
+    table
+      thead
+        tr
+          th Comment
+          th Actions
+      tbody
+        each comment in comments
+          tr
+            td= comment.comment
+            td
+              form(action='/student3/comments/edit/' + comment.id method='get' style='display:inline')
+                button(type='submit') Edit
+              form(action='/student3/comments/delete/' + comment.id method='post' style='display:inline')
+                button(type='submit') Delete
+  else
+    p No comments yet.
+  br
+  a(href='/student3') Back to Home

@@ -1,0 +1,12 @@
+doctype html
+link(rel='stylesheet' href='/css/student3.css')
+head
+  title Edit Comment - Snake Training (PhD)
+body
+  h1 Edit Comment
+  form(action='/student3/comments/edit/' + comment.id method='post')
+    textarea(name='comment' rows='4' cols='50')= comment.comment
+    br
+    button(type='submit') Update Comment
+  br
+  a(href='/student3/comments') Back to Comments

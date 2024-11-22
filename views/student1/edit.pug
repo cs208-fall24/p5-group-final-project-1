@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Edit Comment
+    link(rel='stylesheet', href='/css/student1.css')
+  body
+    h1 Edit Comment
+    form(action='/student1/comments/edit/' + comment.id, method='POST')
+      p
+        label(for='comment') Edit Comment:
+        input#comment(type='text', name='comment', value=comment.comment)
+        br
+        br
+        input(type='submit', value='Update Comment')

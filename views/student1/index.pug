@@ -48,4 +48,7 @@ body
     section#comments
         h2
             a(href= '/student1/comments') Comments (Click to Open Full Section)
+        ul 
+        - for (let i = 0; i < s1comments.length; i++) 
+            li= s1comments[i].comment
         

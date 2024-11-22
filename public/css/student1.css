@@ -49,3 +49,9 @@ body{
 #comments>h2{
     text-decoration: underline;
 }
+#comments>ul{
+    padding-left: 20px;
+}
+#comments>li{
+    margin-bottom: 20px;
+}

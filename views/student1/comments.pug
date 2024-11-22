@@ -1,0 +1,23 @@
+doctype html
+link(rel='stylesheet' href='css/student1.css')
+
+head
+    title vinyls comment section - student1
+body
+    h1 Comment Section
+    a(href='/student1') Back to Index Page
+    form(action='/student1/comments/add', method='POST' id='input')
+        p
+            label(for='comment') Enter Comment:   
+            input#comment(type='text' name='comment' placeholder='Enter Comment Here...')
+            br
+            br
+            input(type='submit' value='Submit Comment!')
+    ul 
+    - for (let i = 0; i < s1comments.length; i++) 
+        li= s1comments[i].comment
+        form(action='/student1/comments/delete', method='post') 
+            input(type='hidden', name='id', value=s1comments[i].id) 
+            input(type='submit', value='Delete') 
+        form(action='/student1/comments/edit/' + s1comments[i].id, method='get') 
+            input(type='submit' value='Edit Comment')

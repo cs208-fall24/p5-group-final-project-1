@@ -1,8 +1,38 @@
 doctype html
 link(rel='stylesheet' href='css/student3.css')
-
 head
-    title Mayonnaise expert (PHD) - student 3
+    title Snake Training (PhD) - Nicholas Bentley
 body
-    h1 You will learn how to study Mayonnaise
-    p A complete degree in Mayonnaise research and development
+    h1 Nicholas Bentley
+    h2 Snake Training (PhD)
+    section
+      h2 Location
+      p Our university is located somewhere.
+    section
+      h2 About
+      section
+        h3 History of Snake Training
+        p ???.
+      section
+        h3 Snake Training Applications
+        p ???.
+      section
+        h3 Snake Training Impacts on Culture
+        p ???.
+    section
+      h2 Things To Do
+      ul
+        li ???
+        li ???
+        li ???
+    section
+      h2 Gallery
+      img(src='../public/img/snake1.jpg' alt='Snake 1')
+      img(src='../public/img/snake2.jpg' alt='Snake 2')
+    if comments && comments.length
+      h2 Random Comments
+      ul
+        each comment in comments
+          li= comment.comment
+    p
+      a(href='student3/comments') Comments Page

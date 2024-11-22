@@ -1,3 +1,57 @@
 body{
-    background-color: hotpink;
+    background-color: lavender;
+}
+
+#location{
+    position: absolute;
+    width: 700px;
+}
+#location>h2{
+    text-decoration: underline;
+}
+
+#campus{
+    position: absolute;
+    left: 800px;
+    top:75px;
+    width: 500px;
+    height: 300px;
+}
+#about{
+    position: absolute;
+    width: 700px;
+    top: 250px;
+}
+#about>h2{
+    text-decoration: underline;
+}
+#ttd{
+    position: absolute;
+    width: 600px;
+    top: 500px;
+    left: 750px;
+}
+#ttd>h2{
+    text-decoration: underline;
+}
+#vinyls{
+    position: absolute;
+    top:500px;
+    
+}
+
+#comments{
+    position: absolute;
+    left: 750px;
+    top: 750px;
+    width: 600px;
+}
+#comments>h2{
+    text-decoration: underline;
+}
+#comments>ul{
+    padding-left: 20px;
+}
+#comments>li{
+    margin-bottom: 20px;
 }

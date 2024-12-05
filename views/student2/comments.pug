@@ -4,5 +4,37 @@ link(rel='stylesheet' href='css/student2.css')
 head 
     title Potato Science -- Comments 
 body 
-    h1 Comments
-    a(href='/student2') Back to Home
+    h1 Comments --- MS Potato Science
+    a(href='/student2') Back to Home 
+
+    br
+    hr
+    br
+
+    form(action='/student2/comments/add', method='POST' id='input')
+        label(for='comment') Comment: 
+        input(type='text' name='comment' size='48' placeholder='Enter Comment')
+        br
+        button(type='submit') Submit
+
+    br
+    hr
+
+    h2 Previous Comments
+    if comments.length > 0
+        table 
+            thead 
+                tr 
+                    th Comment 
+                    th 
+            tbody 
+                each comment in comments 
+                    tr 
+                        td= comment.comment 
+                        td 
+                            form(action='/student2/comments/edit/' + comment.id method='GET' style='display:inline')
+                                button(type='submit') Edit Comment
+                            form(action='/student2/comments/delete/' + comment.id method='POST' style='display:inline')
+                                button(type='submit') Delete
+    else 
+        p No Comments!

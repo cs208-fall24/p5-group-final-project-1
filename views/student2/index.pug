@@ -12,7 +12,7 @@ body
             | The campus is located on the International Space Station at a newly implemented Potato laboratory.
             br
             br
-            img(src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.cuuTrj9Xx65m07cFXDbP9gAAAA%26pid%3DApi&f=1&ipt=a23a076274e72624bf0f131a3e42d4bc3f78740d10327ca987fb9e8a6e990a1b&ipo=images' alt='International Space Station')
+            img(src='img/ISS.png' alt='International Space Station')
     Section    
         h2 About 
         p 
@@ -25,4 +25,8 @@ body
             li Make even more french fries 
     Section#comments
         h2 
-            a(href='student2/comments') Comments
+            a(href='/student2/comments') Comments
+        if comments && comments.length 
+            ul 
+                each comment in comments 
+                    li= comment.comment

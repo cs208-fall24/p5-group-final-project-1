@@ -1,0 +1,14 @@
+doctype html 
+link(rel='stylesheet' href='css/student2.css')
+
+head 
+    title Edit Comments 
+body    
+    h1 Edit Comments 
+    form(action='/student2/comments/edit/' + comment.id method='POST')
+        label(for='comment') Edit Comment: 
+        input(type='text', name='comment', value=comment.comment)
+        br
+        br
+        input(type='submit', value='Update Comment')
+    a(href='/student2/comments') Back to comments page

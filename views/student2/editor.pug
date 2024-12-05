@@ -1,10 +1,11 @@
 doctype html 
-link(rel='stylesheet' href='css/student2.css')
+link(rel='stylesheet' href='/css/student2.css')
 
 head 
     title Edit Comments 
 body    
     h1 Edit Comments 
+    hr.comment
     form(action='/student2/comments/edit/' + comment.id method='POST')
         label(for='comment') Edit Comment: 
         input(type='text', name='comment', value=comment.comment)

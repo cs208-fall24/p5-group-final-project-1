@@ -9,7 +9,7 @@ function student2Routes(app, db) {
         )`)
     })
     
-    
+    //Displays up to 5 comments that are randomly selected from the list of comments
     app.get('/student2', function (req, res) {
         console.log('GET /student2 called')
             
@@ -26,6 +26,7 @@ function student2Routes(app, db) {
         })
     })
     
+    //Renders the comments page so it can be displayed
     app.get('/student2/comments', function (req, res) {
         console.log('GET /student2/comments called')
         
@@ -37,6 +38,7 @@ function student2Routes(app, db) {
         })
     })
     
+    //Adds a comment to the list of comments and refreshes the page to display the new comment
     app.post('/student2/comments/add', function (req, res) {
         let newComment = req.body.comment
         db.run('INSERT INTO student2_comments (comment) VALUES (?)', [newComment], function(err){
@@ -47,6 +49,7 @@ function student2Routes(app, db) {
         })
     })
     
+    //Deletes the comment with the specific id and removes it from the comments list
     app.post('/student2/comments/delete/:id', function (req, res) {
         let id = req.params.id
         db.run('DELETE FROM student2_comments WHERE id = ?', [id], function(err){
@@ -57,6 +60,7 @@ function student2Routes(app, db) {
         })
     })
     
+    //Allows the user to edit a previously posted comment and redirects them to the editor page
     app.get('/student2/comments/edit/:id', function (req, res) {
         let id = req.params.id
         db.get('SELECT * FROM student2_comments WHERE id = ?', [id], (err, comment) => {
@@ -67,7 +71,7 @@ function student2Routes(app, db) {
         })
     })
     
-     
+    //After a user has made their edits, the comment gets updated and the user is redirected back to the comments page
     app.post('/student2/comments/edit/:id', function(req, res) {
         let id = req.params.id
         let updatedComment = req.body.comment

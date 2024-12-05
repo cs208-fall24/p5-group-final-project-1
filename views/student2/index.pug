@@ -7,26 +7,31 @@ body
     h1 MS Potato Science -- Brayden Bowen
     hr
     Section
-        h2 Location
+        h2.underline Location
         p 
-            | The campus is located on the International Space Station at a newly implemented Potato laboratory.
+            | The campus is located on the International Space Station at a newly implemented Potato laboratory
+            | where you can learn everything there is to know about potatoes.
             br
             br
-            img(src='img/ISS.png' alt='International Space Station')
+            img(src='img/ISS2.png' alt='International Space Station' height='200px' width='250px')
     Section    
-        h2 About 
+        h2.underline About 
         p 
             | Potato Science is very important as we wouldn't have french fries without it and french fries are very good.
+        img(src='img/potato.png' alt='Cartoon Potato' height='75px' width='75px')
     Section 
-        h2 Things To Do 
+        h2.underline Things To Do 
         ul 
             li Learn how to make french fries
             li Make more french fries
             li Make even more french fries 
-    Section#comments
+    Section
         h2 
             a(href='/student2/comments') Comments
         if comments && comments.length 
             ul 
                 each comment in comments 
                     li= comment.comment
+        else 
+            ul 
+                li No Comments!

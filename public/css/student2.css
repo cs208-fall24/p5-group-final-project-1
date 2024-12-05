@@ -1,3 +1,45 @@
 body{
+    background-color: #EFEAB5;
+}
 
+h1{
+    font: bold 50px Lucida;
+}
+
+p, li{
+    font-size: 110%;
+}
+
+hr{
+    height: 4px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+}
+
+hr.comment{
+    height: 2px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.button{
+    background-color: #efcdb5;
+}
+
+.textbox{
+    background-color: #f9f7e1;
+}
+
+a:link{
+    color: #617aa8;
+}
+
+a:visited {
+    color: #617aa8;
 }

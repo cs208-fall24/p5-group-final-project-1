@@ -1,6 +1,7 @@
 import express from 'express'
 import sql from 'sqlite3'
 import student3Routes from '../public/js/student3.js'
+import student2Routes from '../public/js/student2.js'
 
 const sqlite3 = sql.verbose()
 
@@ -60,12 +61,8 @@ app.get('/student1/comments', function (req, res) {
   console.log('GET called')
 })
 
-app.get('/student2', function (req, res) {
-  console.log('GET called')
-  res.render('student2')
-})
-
 student3Routes(app, db)
+student2Routes(app, db)
 
 
 app.post('/student1/comments/add', function(req, res) {

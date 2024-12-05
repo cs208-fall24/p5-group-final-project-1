@@ -1,5 +1,3 @@
-import express from 'express'
-
 function student3Routes(app, db) {
 
   db.serialize(() => {

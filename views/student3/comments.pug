@@ -21,9 +21,9 @@ body
           tr
             td= comment.comment
             td
-              form(action='/student3/comments/edit/' + comment.id method='get' style='display:inline')
+              form(action='/student3/comments/edit/' + comment.id method='get')
                 button(type='submit') Edit
-              form(action='/student3/comments/delete/' + comment.id method='post' style='display:inline')
+              form(action='/student3/comments/delete/' + comment.id method='post')
                 button(type='submit') Delete
   else
     p No comments yet.
